@@ -19,7 +19,12 @@ Route::get('/users/{user}', function (App\User $user) {
 
 Route::get('/', 'PostController@index');
 Route::get('/posts', 'PostController@index');
-Route::get('/post/{$id}', 'PostController@show');
+Route::get('/post/{id}', 'PostController@show');
+Route::get('/tag/{id}', 'TagController@show');
+Route::get('/user/{id}', 'UserController@show');
+
+
+
 Route::resource('post', 'PostController');
 Route::get('test', function(){
     return view('layouts.app');
